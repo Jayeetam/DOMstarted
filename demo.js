@@ -33,11 +33,25 @@ items[1].textContent = 'Hello 2';
 items[1].style.fontWeight = 'bold';
 items[1].style.backgroundColor = 'yellow';
 
+for(var i=0; i< items.length; i++){
+    items[i].style.backgroundColor  = '#f4f4f4';
+}
+
 var additems = document.getElementsByClassName('title');
 console.log(additems);
 console.log(additems[0]);
 additems[0].style.fontWeight = 'bold';
 additems[0].style.color = 'green';
+
+//Question 2//
+items[2].style.backgroundColor = 'green';
+
+//Question 3//
+for(var i=0; i< items.length; i++){
+    items[i].style.fontWeight = 'bold';
+}
+
+
 
 
 

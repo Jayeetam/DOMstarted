@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section class="container">
+      <form onsubmit="savetolocal(event)">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name">
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" id="email">
+        </div>
+        <input class="btn" type="submit" value="Submit">
+      </form>
+    </section>
+    <script>
+        function savetolocal(event){
+            event.preventDefault();
+            let myobj = { name : event.target.name.value,
+            email: event.target.email.value
+            };
+            let myobj_serialized = JSON.stringify(myobj);
+            localStorage.setItem("myobj",myobj_serialized);
+            let myobj_deserialized = JSON.parse(localStorage.getItem("myobj"));
+            console.log(myobj_deserialized);
+            
+        }
+    </script>
+  </body>
+</html>
